@@ -1,5 +1,5 @@
 
-# Go Wikipedia Web Crawler (Concurrent)
+# Concurrent Go Wikipedia Web Crawler
 
 ## Overview
 
@@ -11,7 +11,7 @@ The crawler supports:
 - Logging of page status and performance
 - Configurable input via command-line flags
 
----
+
 
 ## How to Build and Run (Application)
 
@@ -28,7 +28,7 @@ go build -o crawler.app .
 GOOS=windows GOARCH=amd64 go build -o crawler.exe .
 ```
 
----
+
 
 ### Run the application:
 
@@ -50,7 +50,7 @@ go run . -output="output/wikipedia_ai.jl"
 ./crawler.app -output="output/robots.jl" -urls="https://en.wikipedia.org/wiki/Robot,https://en.wikipedia.org/wiki/Chatbot"
 ```
 
----
+
 
 ### Error Handling & User Guidance
 
@@ -61,7 +61,7 @@ go run . -output="output/wikipedia_ai.jl"
 | All successful crawls         | Logs: `[SUCCESS] Scraped ... in 400ms`                         |
 | No flags provided             | Uses default URLs and outputs to `output/results.jl`           |
 
----
+
 
 ## How to Test & What Has Been Tested
 
@@ -81,7 +81,7 @@ go test -bench=. -benchmem
 | Memory usage test    | Measured before/after RAM allocation via `runtime.MemStats`                     |
 | Benchmarking         | Multiple round performance test with `go test -bench`                           |
 
----
+
 
 ## Output Format Example (`results.jl`)
 
@@ -92,7 +92,7 @@ Each line is a standalone JSON object:
 {"url":"https://en.wikipedia.org/wiki/Robot","text":"A robot is a machine—especially one programmable by a computer..."}
 ```
 
----
+
 
 ## Performance Observation
 
@@ -103,7 +103,7 @@ Total test runtime: 0.374 seconds
 This confirms both data collection and write-to-storage components are working correctly.
 
 
----
+
 
 ## GenAI Tools
 
